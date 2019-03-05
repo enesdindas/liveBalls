@@ -1,0 +1,14 @@
+{
+  "name": "liveBalls",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ns <enesdindas26@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/enesdindas/liveBalls",
+  "dependencies": {
+    "angular": "^1.7.7",
+    "semantic": "^2.4.1"
+  }
+}
