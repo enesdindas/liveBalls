@@ -19,18 +19,34 @@ app.controller('indexController', ['$scope', 'indexFactory', ($scope, indexFacto
 
         indexFactory.connectSocket('http://localhost:3000', connectionOptions)
             .then((socket) => {
-                socket.emit('newUser', {username});
+                socket.emit('newUser', {
+                    username
+                });
 
-                socket.on('newUser', (data)  => {
-                    console.log(data);
+                socket.on('newUser', (data) => {
                     const messageData = {
-                        type: 0, // info
+                        type: {
+                            code: 0,
+                            online: 1
+                        }, // info
                         username: data.username
                     };
 
                     $scope.messages.push(messageData);
                     $scope.$apply();
                 });
+                socket.on('disUser', (data) => {
+                    const messageData = {
+                        type: {
+                            code: 0,
+                            online: 0
+                        },
+                        username: data.username
+                    };
+                    $scope.messages.push(messageData);
+                    $scope.$apply();
+                });
+
             }).catch((err) => {
                 console.log(err)
             });
