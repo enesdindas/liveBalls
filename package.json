@@ -1,18 +1,22 @@
 {
-  "name": "application-name",
+  "name": "liveBalls",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "start:dev": "nodemon ./bin/www",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bower": "^1.8.2",
     "cookie-parser": "^1.4.4",
     "debug": "^4.1.1",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "pug": "^2.0.3",
     "socket.io": "^2.2.0",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "serve-favicon": "^2.0.4"
   }
 }
